@@ -76,6 +76,7 @@ public class VividItemGroups {
         entries.add(VividSpirit.POLISHED_BLOOMED_CALCITE_COLUMN);
         entries.add(VividSpirit.POLISHED_BLOOMED_CALCITE_CREST);
         entries.add(VividSpirit.STERE_BLOCK);
+        entries.add(VividSpirit.CLAY_DIRT);
         entries.add(VividSpirit.FLUX_BRICK_COLUMN);
         entries.add(VividSpirit.POLYMER_CLAY);
         entries.add(VividSpirit.FROZEN_RUBY);

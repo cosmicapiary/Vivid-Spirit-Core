@@ -6,7 +6,7 @@ import net.cosmicapiary.vivid_spirit.VividSpirit;
 import net.minecraft.block.Block;
 
 public enum VividPedestalVariant implements PedestalVariant {
-    PRE_GEM(PedestalRecipeTier.valueOf("PRE_GEM"));
+    PRE_GEM(PedestalRecipeTier.BASIC);
 
     private final PedestalRecipeTier tier;
 

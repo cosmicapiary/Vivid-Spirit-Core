@@ -123,6 +123,10 @@ public class VividSpirit implements ModInitializer {
 					.sounds(BlockSoundGroup.MUD_BRICKS)
 			));
 
+	public static final Block CLAY_DIRT = registerBlock("clay_dirt",
+			new Block(FabricBlockSettings.copyOf(Blocks.CLAY)
+			));
+
 	public static final Block PIGMENT_PEDESTAL = registerBlock("pigment_pedestal",
 			new PedestalBlock(FabricBlockSettings.copyOf(SpectrumBlocks.PEDESTAL_BASIC_TOPAZ).sounds(BlockSoundGroup.STONE),
 					VividPedestalVariant.PRE_GEM
