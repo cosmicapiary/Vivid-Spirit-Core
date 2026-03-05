@@ -1,5 +1,11 @@
 package net.cosmicapiary.vivid_spirit;
 
+import com.klikli_dev.modonomicon.book.page.BookRecipePage;
+import com.klikli_dev.modonomicon.client.render.page.PageRendererRegistry;
+import com.sammy.malum.common.recipe.SpiritFocusingRecipe;
+import com.sammy.malum.common.recipe.SpiritInfusionRecipe;
+import net.cosmicapiary.vivid_spirit.custom.BookSpiritFocusingPageRenderer;
+import net.cosmicapiary.vivid_spirit.custom.BookSpiritInfusionPageRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
@@ -35,6 +41,9 @@ public class VividClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.LARGE_LUMIERE_BUD, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.PIGMENT_PEDESTAL, RenderLayer.getCutout());
+
+        PageRendererRegistry.registerPageRenderer(new Identifier("vivid_spirit:malum/spirit_infusion"), p -> new BookSpiritInfusionPageRenderer((BookRecipePage<SpiritInfusionRecipe>) p));
+        PageRendererRegistry.registerPageRenderer(new Identifier("vivid_spirit:malum/spirit_focusing"), p -> new BookSpiritFocusingPageRenderer((BookRecipePage<SpiritFocusingRecipe>) p));
 
     }
 
