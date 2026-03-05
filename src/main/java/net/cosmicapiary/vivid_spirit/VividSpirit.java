@@ -1,21 +1,12 @@
 package net.cosmicapiary.vivid_spirit;
 
-import com.google.gson.JsonObject;
-import com.klikli_dev.modonomicon.book.BookTextHolder;
-import com.klikli_dev.modonomicon.book.conditions.BookCondition;
-import com.klikli_dev.modonomicon.book.conditions.BookNoneCondition;
-import com.klikli_dev.modonomicon.book.page.BookRecipePage;
 import com.klikli_dev.modonomicon.data.LoaderRegistry;
-import com.klikli_dev.modonomicon.util.BookGsonHelper;
-import com.sammy.malum.common.recipe.AbstractMalumRecipe;
 import com.sammy.malum.registry.common.recipe.RecipeTypeRegistry;
-import de.dafuqs.spectrum.api.recipe.GatedRecipe;
 import de.dafuqs.spectrum.blocks.decoration.CardinalFacingBlock;
 import de.dafuqs.spectrum.blocks.gemstone.SpectrumBuddingBlock;
 import de.dafuqs.spectrum.blocks.geology.ShimmerstoneOreBlock;
 import de.dafuqs.spectrum.blocks.pedestal.BuiltinPedestalVariant;
 import de.dafuqs.spectrum.blocks.pedestal.PedestalBlock;
-import de.dafuqs.spectrum.compat.modonomicon.pages.BookGatedRecipePage;
 import de.dafuqs.spectrum.registries.*;
 
 import net.cosmicapiary.vivid_spirit.custom.*;
@@ -28,14 +19,11 @@ import net.id.paradiselost.blocks.ParadiseLostBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.*;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeType;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.JsonHelper;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import org.slf4j.Logger;
