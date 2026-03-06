@@ -19,6 +19,7 @@ import java.util.List;
 
 public class BookSpiritInfusionPageRenderer extends BookRecipePageRenderer<SpiritInfusionRecipe, BookRecipePage<SpiritInfusionRecipe>> {
 	private static final Identifier BACKGROUND_TEXTURE = MalumMod.malumPath("textures/gui/spirit_infusion_jei.png");
+
 	public BookSpiritInfusionPageRenderer(BookRecipePage<SpiritInfusionRecipe> page) {
 		super(page);
 	}
@@ -69,7 +70,7 @@ public class BookSpiritInfusionPageRenderer extends BookRecipePageRenderer<Spiri
 		parentScreen.renderIngredient(drawContext, 62, 56, mouseX, mouseY, inputs.get(0));
 
 		// output slot
-		parentScreen.renderItemStack(drawContext, 62, 56, mouseX, mouseY, result);
+		parentScreen.renderItemStack(drawContext, 62, 123, mouseX, mouseY, result);
 	}
 
 	public void addItems(DrawContext drawContext, int left, int top, boolean vertical, int mouseX, int mouseY, List<Ingredient> ingredients) {
@@ -86,6 +87,5 @@ public class BookSpiritInfusionPageRenderer extends BookRecipePageRenderer<Spiri
 			int offsetTop = top + 1 + (vertical ? offset : 0);
 			parentScreen.renderIngredient(drawContext, offsetLeft, offsetTop, mouseX, mouseY, ingredients.get(i));
 		}
-
 	}
 }
