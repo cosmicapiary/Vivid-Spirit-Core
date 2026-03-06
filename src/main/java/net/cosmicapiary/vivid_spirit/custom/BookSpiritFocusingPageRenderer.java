@@ -57,11 +57,11 @@ public class BookSpiritFocusingPageRenderer extends BookRecipePageRenderer<Spiri
 
 		// input frames
 		if (!spirits.isEmpty()) {
-			ArcanaCodexHelper.renderItemFrames(drawContext.getMatrices(), spirits.size(), 61, 12, true);
+			ArcanaCodexHelper.renderItemFrames(drawContext.getMatrices(), spirits.size(), 61, 12, false);
 		}
 
 		// spirit item slots
-		addItems(drawContext, 61, 12, true, mouseX, mouseY, spirits);
+		addItems(drawContext, 61, 12, false, mouseX, mouseY, spirits);
 
 		// main ingredient slot
 		parentScreen.renderIngredient(drawContext, 62, 56, mouseX, mouseY, inputs.get(0));
