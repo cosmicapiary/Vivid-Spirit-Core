@@ -1,13 +1,11 @@
-package net.cosmicapiary.vivid_spirit.custom;
+package net.cosmicapiary.vivid_spirit.custom.malum_compat;
 
 import com.google.common.collect.Lists;
 import com.klikli_dev.modonomicon.book.BookTextHolder;
 import com.klikli_dev.modonomicon.book.page.BookRecipePage;
 import com.klikli_dev.modonomicon.client.gui.book.BookContentScreen;
-import com.klikli_dev.modonomicon.client.render.page.BookRecipePageRenderer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.sammy.malum.MalumMod;
-import com.sammy.malum.client.screen.codex.ArcanaCodexHelper;
 import com.sammy.malum.common.recipe.SpiritFocusingRecipe;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.ItemStack;
@@ -17,8 +15,8 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BookSpiritFocusingPageRenderer extends BookRecipePageRenderer<SpiritFocusingRecipe, BookRecipePage<SpiritFocusingRecipe>> {
-	private static final Identifier BACKGROUND_TEXTURE = MalumMod.malumPath("textures/gui/spirit_focusing_jei.png");
+public class BookSpiritFocusingPageRenderer extends AbstractBookMalumRecipePageRenderer<SpiritFocusingRecipe> {
+	private static final Identifier BACKGROUND_TEXTURE = MalumMod.malumPath("textures/gui/book/pages/spirit_focusing_page.png");
 
 	public BookSpiritFocusingPageRenderer(BookRecipePage<SpiritFocusingRecipe> page) {
 		super(page);
@@ -43,13 +41,12 @@ public class BookSpiritFocusingPageRenderer extends BookRecipePageRenderer<Spiri
 		if (world == null) return;
 
 		RenderSystem.enableBlend();
-		drawContext.drawTexture(BACKGROUND_TEXTURE, recipeX, recipeY, 0, 0, 100, 80, 256, 256);
+		//drawContext.drawTexture(BACKGROUND_TEXTURE, recipeX, recipeY, 0, 0, 142, 172, 256, 256);
 
 		renderTitle(drawContext, recipeY, second);
 
 		// the ingredients and result
 		final List<Ingredient> inputs = Lists.newArrayList();
-		final List<Ingredient> extraItems;
 		final List<Ingredient> spirits;
 		final ItemStack result = recipe.output;
 		inputs.add(recipe.input);
@@ -57,32 +54,16 @@ public class BookSpiritFocusingPageRenderer extends BookRecipePageRenderer<Spiri
 
 		// input frames
 		if (!spirits.isEmpty()) {
-			ArcanaCodexHelper.renderItemFrames(drawContext.getMatrices(), spirits.size(), 61, 12, false);
+			renderItemFrames(drawContext, spirits.size(), recipeX + 40, recipeY + 12, false);
 		}
 
 		// spirit item slots
-		addItems(drawContext, 61, 12, false, mouseX, mouseY, spirits);
+		addItems(parentScreen, drawContext, recipeX + 40, recipeY + 12, false, mouseX, mouseY, spirits);
 
 		// main ingredient slot
-		parentScreen.renderIngredient(drawContext, 62, 56, mouseX, mouseY, inputs.get(0));
+		parentScreen.renderIngredient(drawContext, recipeX + 40, recipeY + 48, mouseX, mouseY, inputs.get(0));
 
 		// output slot
-		parentScreen.renderItemStack(drawContext, 62, 123, mouseX, mouseY, result);
-	}
-
-	public void addItems(DrawContext drawContext, int left, int top, boolean vertical, int mouseX, int mouseY, List<Ingredient> ingredients) {
-		int slots = ingredients.size();
-		if (vertical) {
-			top -= 10 * (slots - 1);
-		} else {
-			left -= 10 * (slots - 1);
-		}
-
-		for(int i = 0; i < slots; ++i) {
-			int offset = i * 20;
-			int offsetLeft = left + 1 + (vertical ? 0 : offset);
-			int offsetTop = top + 1 + (vertical ? offset : 0);
-			parentScreen.renderIngredient(drawContext, offsetLeft, offsetTop, mouseX, mouseY, ingredients.get(i));
-		}
+		parentScreen.renderItemStack(drawContext, recipeX + 40, recipeY + 72, mouseX, mouseY, result);
 	}
 }
