@@ -55,19 +55,19 @@ public class BookSpiritInfusionPageRenderer extends AbstractBookMalumRecipePageR
 		inputs.addAll(spirits = recipe.spirits.stream().map((spirit) -> Ingredient.ofStacks(spirit.getStack())).toList());
 
 		// input frames
-		renderItemFrames(drawContext, spirits.size(), recipeX - 8, recipeY + 56, true);
+		renderItemFrames(drawContext, spirits.size(), recipeX - 8, recipeY + 48, true);
 		if (!extraItems.isEmpty()) {
-			renderItemFrames(drawContext, extraItems.size(), recipeX + 88, recipeY + 56, true);
+			renderItemFrames(drawContext, extraItems.size(), recipeX + 80, recipeY + 48, true);
 		}
 
 		// spirit and extra item slots
-		addItems(parentScreen, drawContext, recipeX - 8, recipeY + 56, true, mouseX, mouseY, spirits);
-		addItems(parentScreen, drawContext, recipeX + 88, recipeY + 56, true, mouseX, mouseY, extraItems);
+		addItems(parentScreen, drawContext, recipeX - 8, recipeY + 48, true, mouseX, mouseY, spirits);
+		addItems(parentScreen, drawContext, recipeX + 80, recipeY + 48, true, mouseX, mouseY, extraItems);
 
 		// main ingredient slot
-		parentScreen.renderIngredient(drawContext, recipeX + 40, recipeY + 56, mouseX, mouseY, inputs.get(0));
+		parentScreen.renderIngredient(drawContext, recipeX + 36, recipeY + 48, mouseX, mouseY, inputs.get(0));
 
 		// output slot
-		parentScreen.renderItemStack(drawContext, recipeX + 40, recipeY + 80, mouseX, mouseY, result);
+		parentScreen.renderItemStack(drawContext, recipeX + 36, recipeY + 80, mouseX, mouseY, result);
 	}
 }

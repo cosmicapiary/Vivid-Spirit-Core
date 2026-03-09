@@ -54,16 +54,16 @@ public class BookSpiritFocusingPageRenderer extends AbstractBookMalumRecipePageR
 
 		// input frames
 		if (!spirits.isEmpty()) {
-			renderItemFrames(drawContext, spirits.size(), recipeX + 40, recipeY + 12, false);
+			renderItemFrames(drawContext, spirits.size(), recipeX + 36, recipeY + 12, false);
 		}
 
 		// spirit item slots
-		addItems(parentScreen, drawContext, recipeX + 40, recipeY + 12, false, mouseX, mouseY, spirits);
+		addItems(parentScreen, drawContext, recipeX + 36, recipeY + 12, false, mouseX, mouseY, spirits);
 
 		// main ingredient slot
-		parentScreen.renderIngredient(drawContext, recipeX + 40, recipeY + 48, mouseX, mouseY, inputs.get(0));
+		parentScreen.renderIngredient(drawContext, recipeX + 36, recipeY + 48, mouseX, mouseY, inputs.get(0));
 
 		// output slot
-		parentScreen.renderItemStack(drawContext, recipeX + 40, recipeY + 72, mouseX, mouseY, result);
+		parentScreen.renderItemStack(drawContext, recipeX + 36, recipeY + 80, mouseX, mouseY, result);
 	}
 }
