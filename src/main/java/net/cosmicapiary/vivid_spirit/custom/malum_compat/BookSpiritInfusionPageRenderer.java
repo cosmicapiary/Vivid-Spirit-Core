@@ -1,13 +1,11 @@
-package net.cosmicapiary.vivid_spirit.custom;
+package net.cosmicapiary.vivid_spirit.custom.malum_compat;
 
 import com.google.common.collect.Lists;
 import com.klikli_dev.modonomicon.book.BookTextHolder;
 import com.klikli_dev.modonomicon.book.page.BookRecipePage;
 import com.klikli_dev.modonomicon.client.gui.book.BookContentScreen;
-import com.klikli_dev.modonomicon.client.render.page.BookRecipePageRenderer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.sammy.malum.MalumMod;
-import com.sammy.malum.client.screen.codex.ArcanaCodexHelper;
 import com.sammy.malum.common.recipe.SpiritInfusionRecipe;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.ItemStack;
@@ -17,8 +15,8 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class BookSpiritInfusionPageRenderer extends BookRecipePageRenderer<SpiritInfusionRecipe, BookRecipePage<SpiritInfusionRecipe>> {
-	private static final Identifier BACKGROUND_TEXTURE = MalumMod.malumPath("textures/gui/spirit_infusion_jei.png");
+public class BookSpiritInfusionPageRenderer extends AbstractBookMalumRecipePageRenderer<SpiritInfusionRecipe> {
+	private static final Identifier BACKGROUND_TEXTURE = MalumMod.malumPath("textures/gui/book/pages/spirit_infusion_page.png");
 
 	public BookSpiritInfusionPageRenderer(BookRecipePage<SpiritInfusionRecipe> page) {
 		super(page);
@@ -43,7 +41,7 @@ public class BookSpiritInfusionPageRenderer extends BookRecipePageRenderer<Spiri
 		if (world == null) return;
 
 		RenderSystem.enableBlend();
-		drawContext.drawTexture(BACKGROUND_TEXTURE, recipeX, recipeY, 0, 0, 100, 80, 256, 256);
+		//drawContext.drawTexture(BACKGROUND_TEXTURE, recipeX, recipeY, 0, 0, 142, 172, 256, 256);
 
 		renderTitle(drawContext, recipeY, second);
 
@@ -57,35 +55,19 @@ public class BookSpiritInfusionPageRenderer extends BookRecipePageRenderer<Spiri
 		inputs.addAll(spirits = recipe.spirits.stream().map((spirit) -> Ingredient.ofStacks(spirit.getStack())).toList());
 
 		// input frames
-		ArcanaCodexHelper.renderItemFrames(drawContext.getMatrices(), spirits.size(), 19, 48, true);
+		renderItemFrames(drawContext, spirits.size(), recipeX - 8, recipeY + 56, true);
 		if (!extraItems.isEmpty()) {
-			ArcanaCodexHelper.renderItemFrames(drawContext.getMatrices(), extraItems.size(), 103, 48, true);
+			renderItemFrames(drawContext, extraItems.size(), recipeX + 88, recipeY + 56, true);
 		}
 
 		// spirit and extra item slots
-		addItems(drawContext, 19, 48, true, mouseX, mouseY, spirits);
-		addItems(drawContext, 103, 48, true, mouseX, mouseY, extraItems);
+		addItems(parentScreen, drawContext, recipeX - 8, recipeY + 56, true, mouseX, mouseY, spirits);
+		addItems(parentScreen, drawContext, recipeX + 88, recipeY + 56, true, mouseX, mouseY, extraItems);
 
 		// main ingredient slot
-		parentScreen.renderIngredient(drawContext, 62, 56, mouseX, mouseY, inputs.get(0));
+		parentScreen.renderIngredient(drawContext, recipeX + 40, recipeY + 56, mouseX, mouseY, inputs.get(0));
 
 		// output slot
-		parentScreen.renderItemStack(drawContext, 62, 123, mouseX, mouseY, result);
-	}
-
-	public void addItems(DrawContext drawContext, int left, int top, boolean vertical, int mouseX, int mouseY, List<Ingredient> ingredients) {
-		int slots = ingredients.size();
-		if (vertical) {
-			top -= 10 * (slots - 1);
-		} else {
-			left -= 10 * (slots - 1);
-		}
-
-		for(int i = 0; i < slots; ++i) {
-			int offset = i * 20;
-			int offsetLeft = left + 1 + (vertical ? 0 : offset);
-			int offsetTop = top + 1 + (vertical ? offset : 0);
-			parentScreen.renderIngredient(drawContext, offsetLeft, offsetTop, mouseX, mouseY, ingredients.get(i));
-		}
+		parentScreen.renderItemStack(drawContext, recipeX + 40, recipeY + 80, mouseX, mouseY, result);
 	}
 }

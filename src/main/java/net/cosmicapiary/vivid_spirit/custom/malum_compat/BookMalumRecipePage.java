@@ -1,4 +1,4 @@
-package net.cosmicapiary.vivid_spirit.custom;
+package net.cosmicapiary.vivid_spirit.custom.malum_compat;
 
 import com.google.gson.JsonObject;
 import com.klikli_dev.modonomicon.book.BookTextHolder;
@@ -8,8 +8,6 @@ import com.klikli_dev.modonomicon.book.conditions.BookNoneCondition;
 import com.klikli_dev.modonomicon.book.page.BookRecipePage;
 import com.klikli_dev.modonomicon.util.BookGsonHelper;
 import com.sammy.malum.common.recipe.AbstractMalumRecipe;
-import de.dafuqs.spectrum.api.recipe.GatedRecipe;
-import de.dafuqs.spectrum.compat.modonomicon.pages.BookGatedRecipePage;
 import de.dafuqs.spectrum.compat.modonomicon.unlock_conditions.RecipesLoadedAndUnlockedCondition;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
@@ -55,12 +53,12 @@ public class BookMalumRecipePage<T extends AbstractMalumRecipe> extends BookReci
 			var title2 = BookGsonHelper.getAsBookTextHolder(json, "title2", BookTextHolder.EMPTY);
 			Identifier recipeId1 = json.has("recipe_id") ? Identifier.tryParse(JsonHelper.getString(json, "recipe_id")) : null;
 			Identifier recipeId2 = json.has("recipe_id2") ? Identifier.tryParse(JsonHelper.getString(json, "recipe_id2")) : null;
-			condition = skipRecipeUnlockCheck ? condition : BookGatedRecipePage.getConditionWithRecipes(condition, recipeId1, recipeId2);
+			condition = skipRecipeUnlockCheck ? condition : getConditionWithRecipes(condition, recipeId1, recipeId2);
 			return new BookMalumRecipePage<>(recipeType, pageType, title1, recipeId1, title2, recipeId2, text, anchor, condition);
 		} else {
 			var title = BookGsonHelper.getAsBookTextHolder(json, "title", BookTextHolder.EMPTY);
 			Identifier recipeId = json.has("recipe_id") ? Identifier.tryParse(JsonHelper.getString(json, "recipe_id")) : null;
-			condition = skipRecipeUnlockCheck ? condition : BookGatedRecipePage.getConditionWithRecipes(condition, recipeId, null);
+			condition = skipRecipeUnlockCheck ? condition : getConditionWithRecipes(condition, recipeId, null);
 			return new BookMalumRecipePage<>(recipeType, pageType, title, recipeId, BookTextHolder.EMPTY, null, text, anchor, condition);
 		}
 	}

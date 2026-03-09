@@ -10,6 +10,7 @@ import de.dafuqs.spectrum.blocks.pedestal.PedestalBlock;
 import de.dafuqs.spectrum.registries.*;
 
 import net.cosmicapiary.vivid_spirit.custom.*;
+import net.cosmicapiary.vivid_spirit.custom.malum_compat.BookMalumRecipePage;
 import net.fabricmc.api.ModInitializer;
 
 
