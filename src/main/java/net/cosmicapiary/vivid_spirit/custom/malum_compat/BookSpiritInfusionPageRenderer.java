@@ -24,7 +24,7 @@ public class BookSpiritInfusionPageRenderer extends AbstractBookMalumRecipePageR
 
 	@Override
 	protected int getRecipeHeight() {
-		return 185;
+		return 120;
 	}
 
 	public void renderTitle(DrawContext drawContext, int recipeY, boolean second) {
