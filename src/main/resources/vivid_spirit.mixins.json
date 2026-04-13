@@ -6,6 +6,7 @@
     "AbstractFurnaceBlockEntityMixin",
     "AbstractSkeletonEntityMixin",
     "CookingRecipeSerializerMixin",
+    "EnchantmentScreenHandlerMixin",
     "EnderAirItemMixin",
     "FallingBlockEntityMixin",
     "TitrationBarrelBlockMixin"
