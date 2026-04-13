@@ -5,8 +5,6 @@ import com.sammy.malum.registry.common.recipe.RecipeTypeRegistry;
 import de.dafuqs.spectrum.blocks.decoration.CardinalFacingBlock;
 import de.dafuqs.spectrum.blocks.gemstone.SpectrumBuddingBlock;
 import de.dafuqs.spectrum.blocks.geology.ShimmerstoneOreBlock;
-import de.dafuqs.spectrum.blocks.pedestal.BuiltinPedestalVariant;
-import de.dafuqs.spectrum.blocks.pedestal.PedestalBlock;
 import de.dafuqs.spectrum.registries.*;
 
 import net.cosmicapiary.vivid_spirit.custom.*;
@@ -16,10 +14,13 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.id.paradiselost.blocks.ParadiseLostBlocks;
+import net.id.paradiselost.world.dimension.ParadiseLostBiomes;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.*;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.fluid.FlowableFluid;
@@ -27,6 +28,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.biome.BiomeKeys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,21 +108,21 @@ public class VividSpirit implements ModInitializer {
 			new Item(liquidPearlSettings()));
 
 	public static final Item ARID_SHARD = registerItem("arid_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), ConventionalBiomeTags.DESERT));
 	public static final Item FLORAL_SHARD = registerItem("floral_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), ((biome) -> biome.isIn(ConventionalBiomeTags.FLORAL) || biome.isIn(ConventionalBiomeTags.FLOWER_FORESTS))));
 	public static final Item JUNGLE_SHARD = registerItem("jungle_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), BiomeTags.IS_JUNGLE));
 	public static final Item MOUNTAIN_SHARD = registerItem("mountain_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), BiomeTags.IS_MOUNTAIN));
 	public static final Item SAPPHIC_SHARD = registerItem("sapphic_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
-	public static final Item SNOWCAP_SHARD = registerItem("snowcap_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), ((biome) -> biome.matchesKey(ParadiseLostBiomes.AUTUMNAL_TUNDRA_KEY) || biome.matchesKey(SpectrumBiomes.HOWLING_SPIRES))));
+	public static final Item PLATEAU_SHARD = registerItem("plateau_shard",
+			new BiomeEyeItem(new FabricItemSettings(), ((biome) -> biome.isIn(BiomeTags.IS_BADLANDS) || biome.isIn(BiomeTags.IS_SAVANNA))));
 	public static final Item SNOWY_SHARD = registerItem("snowy_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), ConventionalBiomeTags.SNOWY));
 	public static final Item WETLAND_SHARD = registerItem("wetland_shard",
-			new BiomeEyeItem(new FabricItemSettings()));
+			new BiomeEyeItem(new FabricItemSettings(), ConventionalBiomeTags.SWAMP));
 
 	public static final Block FLUX_BRICK_COLUMN = registerBlock("flux_brick_column",
 			new PillarBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)
