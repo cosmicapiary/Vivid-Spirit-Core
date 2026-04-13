@@ -137,11 +137,6 @@ public class VividSpirit implements ModInitializer {
 			new Block(FabricBlockSettings.copyOf(Blocks.CLAY)
 			));
 
-	public static final Block PIGMENT_PEDESTAL = registerBlock("pigment_pedestal",
-			new PedestalBlock(FabricBlockSettings.copyOf(SpectrumBlocks.PEDESTAL_BASIC_TOPAZ).sounds(BlockSoundGroup.STONE),
-					VividPedestalVariant.PRE_GEM
-			));
-
 	public static final Block TOPAZ_INLAID_BASALT_COLUMN = registerBlock("topaz_inlaid_basalt_column",
 			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.TOPAZ_CHISELED_BASALT)
 					.luminance(7)
