@@ -92,7 +92,6 @@ public class VividItemGroups {
         entries.add(VividSpirit.BEDROCK_SCYTHE);
         entries.add(VividSpirit.BEDROCK_KNIFE);
         entries.add(VividSpirit.CEREMONIAL_FALCHION);
-        entries.add(VividSpirit.PIGMENT_PEDESTAL);
 
 
     }).build());

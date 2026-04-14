@@ -8,17 +8,21 @@ import de.dafuqs.spectrum.blocks.geology.ShimmerstoneOreBlock;
 import de.dafuqs.spectrum.registries.*;
 
 import net.cosmicapiary.vivid_spirit.custom.*;
+import net.cosmicapiary.vivid_spirit.custom.BiomeEyeEntity;
 import net.cosmicapiary.vivid_spirit.custom.malum_compat.BookMalumRecipePage;
 import net.fabricmc.api.ModInitializer;
 
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.id.paradiselost.blocks.ParadiseLostBlocks;
 import net.id.paradiselost.world.dimension.ParadiseLostBiomes;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.*;
 import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.sound.BlockSoundGroup;
@@ -28,7 +32,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.world.biome.BiomeKeys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -106,6 +109,9 @@ public class VividSpirit implements ModInitializer {
 			new Item(new FabricItemSettings()));
 	public static final Item LIQUID_PEARLS = registerItem("liquid_pearls",
 			new Item(liquidPearlSettings()));
+
+	public static final EntityType<BiomeEyeEntity> BIOME_EYE = Registry.register(Registries.ENTITY_TYPE, Identifier.of(MOD_ID, "biome_eye"),
+			EntityType.Builder.create(BiomeEyeEntity::new, SpawnGroup.MISC).setDimensions(0.25F, 0.25F).maxTrackingRange(4).trackingTickInterval(4).build("biome_eye"));
 
 	public static final Item ARID_SHARD = registerItem("arid_shard",
 			new BiomeEyeItem(new FabricItemSettings(), ConventionalBiomeTags.DESERT));

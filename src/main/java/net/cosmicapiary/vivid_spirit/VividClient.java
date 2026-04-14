@@ -10,7 +10,10 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.entity.EntityRenderers;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.util.Identifier;
 
 public class VividClient implements ClientModInitializer {
@@ -40,7 +43,7 @@ public class VividClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.MEDIUM_LUMIERE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.LARGE_LUMIERE_BUD, RenderLayer.getCutout());
 
-        BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.PIGMENT_PEDESTAL, RenderLayer.getCutout());
+        EntityRendererRegistry.register(VividSpirit.BIOME_EYE, (context) -> new FlyingItemEntityRenderer<>(context, 1.0F, true));
 
         PageRendererRegistry.registerPageRenderer(new Identifier("vivid_spirit:malum/spirit_infusion"), p -> new BookSpiritInfusionPageRenderer((BookRecipePage<SpiritInfusionRecipe>) p));
         PageRendererRegistry.registerPageRenderer(new Identifier("vivid_spirit:malum/spirit_focusing"), p -> new BookSpiritFocusingPageRenderer((BookRecipePage<SpiritFocusingRecipe>) p));
