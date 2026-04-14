@@ -145,47 +145,6 @@ public class VividSpirit implements ModInitializer {
 			new Block(FabricBlockSettings.copyOf(Blocks.CLAY)
 			));
 
-	public static final Block TOPAZ_INLAID_BASALT_COLUMN = registerBlock("topaz_inlaid_basalt_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.TOPAZ_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block TOPAZ_INLAID_CALCITE_COLUMN = registerBlock("topaz_inlaid_calcite_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.TOPAZ_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block AMETHYST_INLAID_BASALT_COLUMN = registerBlock("amethyst_inlaid_basalt_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.AMETHYST_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block AMETHYST_INLAID_CALCITE_COLUMN = registerBlock("amethyst_inlaid_calcite_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.AMETHYST_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block CITRINE_INLAID_BASALT_COLUMN = registerBlock("citrine_inlaid_basalt_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.CITRINE_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block CITRINE_INLAID_CALCITE_COLUMN = registerBlock("citrine_inlaid_calcite_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.CITRINE_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block ONYX_INLAID_BASALT_COLUMN = registerBlock("onyx_inlaid_basalt_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.ONYX_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block ONYX_INLAID_CALCITE_COLUMN = registerBlock("onyx_inlaid_calcite_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.ONYX_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block MOONSTONE_INLAID_BASALT_COLUMN = registerBlock("moonstone_inlaid_basalt_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.MOONSTONE_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block MOONSTONE_INLAID_CALCITE_COLUMN = registerBlock("moonstone_inlaid_calcite_column",
-			new PillarBlock(FabricBlockSettings.copyOf(SpectrumBlocks.MOONSTONE_CHISELED_CALCITE)
-					.luminance(7)
-			));
-
 	public static final Block ALLURITE_INLAID_BLOOMED_CALCITE_COLUMN = registerBlock("allurite_inlaid_bloomed_calcite_column",
 			new PillarBlock(FabricBlockSettings.copyOf(ParadiseLostBlocks.BLOOMED_CALCITE)
 					.luminance(7)
@@ -210,46 +169,7 @@ public class VividSpirit implements ModInitializer {
 			));
 
 	public static final Block TOPAZ_INLAID_BASALT_CREST = registerBlock("topaz_inlaid_basalt_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.TOPAZ_CHISELED_BASALT)
 					.luminance(7)
-			));
-	public static final Block TOPAZ_INLAID_CALCITE_CREST = registerBlock("topaz_inlaid_calcite_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.TOPAZ_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block AMETHYST_INLAID_BASALT_CREST = registerBlock("amethyst_inlaid_basalt_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.AMETHYST_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block AMETHYST_INLAID_CALCITE_CREST = registerBlock("amethyst_inlaid_calcite_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.AMETHYST_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block CITRINE_INLAID_BASALT_CREST = registerBlock("citrine_inlaid_basalt_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.CITRINE_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block CITRINE_INLAID_CALCITE_CREST = registerBlock("citrine_inlaid_calcite_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.CITRINE_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block ONYX_INLAID_BASALT_CREST = registerBlock("onyx_inlaid_basalt_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.ONYX_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block ONYX_INLAID_CALCITE_CREST = registerBlock("onyx_inlaid_calcite_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.ONYX_CHISELED_CALCITE)
-					.luminance(7)
-			));
-	public static final Block MOONSTONE_INLAID_BASALT_CREST = registerBlock("moonstone_inlaid_basalt_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.MOONSTONE_CHISELED_BASALT)
-					.luminance(7)
-			));
-	public static final Block MOONSTONE_INLAID_CALCITE_CREST = registerBlock("moonstone_inlaid_calcite_crest",
-			new CardinalFacingBlock(FabricBlockSettings.copyOf(SpectrumBlocks.MOONSTONE_CHISELED_CALCITE)
-					.luminance(7)
-			));
-
 	public static final Block BLACKSLAG_ZINC_ORE = registerBlock("blackslag_zinc_ore",
 			new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)
 			));
@@ -320,10 +240,6 @@ public class VividSpirit implements ModInitializer {
 			));
 
 	public static final Block ALLURITE_CLUSTER = registerBlock("allurite_cluster",
-			new AmethystClusterBlock(7, 3, FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)
-			));
-
-	public static final Block ECHO_CLUSTER = registerBlock("echo_cluster",
 			new AmethystClusterBlock(7, 3, FabricBlockSettings.copyOf(Blocks.AMETHYST_CLUSTER)
 			));
 

@@ -26,29 +26,6 @@
                   }
                 }
               ]
-            },
-            {
-              "type": "minecraft:item",
-              "name": "spelunkery:rough_cinnabar",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "min": 1,
-                    "max": 2
-                  },
-                  "add": false
-                },
-                {
-                  "function": "minecraft:apply_bonus",
-                  "enchantment": "minecraft:fortune",
-                  "formula": "minecraft:ore_drops"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ]
             }
           ]
         }
@@ -88,8 +65,8 @@
                   "function": "minecraft:set_count",
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 3,
-                    "max": 6
+                    "min": 5,
+                    "max": 9
                   },
                   "add": false
                 },

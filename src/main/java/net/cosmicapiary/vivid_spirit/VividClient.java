@@ -33,7 +33,6 @@ public class VividClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.SMALL_SILVER_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.LARGE_SILVER_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.SILVER_CLUSTER, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.ECHO_CLUSTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.SMALL_ALLURITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.MEDIUM_ALLURITE_BUD, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(VividSpirit.LARGE_ALLURITE_BUD, RenderLayer.getCutout());

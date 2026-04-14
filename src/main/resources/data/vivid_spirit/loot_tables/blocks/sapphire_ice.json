@@ -52,15 +52,15 @@
                       "function": "minecraft:explosion_decay"
                     }
                   ],
-                  "name": "rubinated_nether:molten_ruby"
+                  "name": "vivid_spirit:frozen_ruby"
                 },
                 {
                   "type": "minecraft:item",
                   "conditions": [
                     {
                       "condition": "rubinated_nether:item_tier",
-                      "max_level": 3,
-                      "min_level": 2
+                      "max_level": 2,
+                      "min_level": 1
                     }
                   ],
                   "functions": [
