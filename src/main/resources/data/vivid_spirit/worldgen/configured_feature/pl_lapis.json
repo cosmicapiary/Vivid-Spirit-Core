@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "vivid_spirit:floestone_redstone_ore"
+          "Name": "vivid_spirit:floestone_lapis_ore"
         },
         "target": {
           "predicate_type": "minecraft:block_match",

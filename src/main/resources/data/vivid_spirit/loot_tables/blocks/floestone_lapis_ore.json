@@ -59,7 +59,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "spelunkery:rough_cinnabar_shard",
+              "name": "spelunkery:rough_lazurite_shard",
               "functions": [
                 {
                   "function": "minecraft:set_count",

@@ -43,6 +43,7 @@ public class VividItemGroups {
         entries.add(VividSpirit.TOFU);
         entries.add(VividSpirit.SHIMMERSTONE_ORE);
         entries.add(VividSpirit.FLOESTONE_REDSTONE_ORE);
+        entries.add(VividSpirit.FLOESTONE_LAPIS_ORE);
         entries.add(VividSpirit.SAPPHIRE_ICE);
         entries.add(VividSpirit.SAPPHIRE_TILES);
         entries.add(VividSpirit.SAPPHIRE_PACKED_ICE);

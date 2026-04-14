@@ -1,9 +1,9 @@
 {
-  "feature": "vivid_spirit:sapphic_ice",
+  "feature": "vivid_spirit:pl_redstone",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 256
+      "count": 6
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:trapezoid",
         "max_inclusive": {
-          "absolute": 320
+          "absolute": 100
         },
         "min_inclusive": {
-          "absolute": 0
+          "absolute": 20
         }
       }
     },

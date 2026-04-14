@@ -199,6 +199,9 @@ public class VividSpirit implements ModInitializer {
 	public static final Block FLOESTONE_REDSTONE_ORE = registerBlock("floestone_redstone_ore",
 			new RedstoneOreBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_ORE)
 			));
+	public static final Block FLOESTONE_LAPIS_ORE = registerBlock("floestone_lapis_ore",
+			new Block(FabricBlockSettings.copyOf(Blocks.LAPIS_ORE)
+			));
 	public static final Block PURE_RUBY_BLOCK = registerBlock("pure_ruby_block",
 			new Block(FabricBlockSettings.copyOf(Blocks.REDSTONE_BLOCK)
 			));

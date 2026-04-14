@@ -19,6 +19,8 @@ public class VividPlacedFeatures {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(VividSpirit.MOD_ID, "pl_onyx"));
     public static final RegistryKey<PlacedFeature> PL_REDSTONE =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(VividSpirit.MOD_ID, "pl_redstone"));
+    public static final RegistryKey<PlacedFeature> PL_LAPIS =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(VividSpirit.MOD_ID, "pl_lapis"));
     public static final RegistryKey<PlacedFeature> PL_BRILLIANT =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(VividSpirit.MOD_ID, "pl_brilliant"));
     public static final RegistryKey<PlacedFeature> PL_SOULSTONE =

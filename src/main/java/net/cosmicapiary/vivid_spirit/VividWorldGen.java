@@ -30,6 +30,8 @@ public class VividWorldGen {
         BiomeModifications.addFeature(BiomeSelectors.tag(ParadiseLostStructureTags.VAULT_HAS_STRUCTURE),
                 GenerationStep.Feature.UNDERGROUND_ORES, VividPlacedFeatures.PL_REDSTONE);
         BiomeModifications.addFeature(BiomeSelectors.tag(ParadiseLostStructureTags.VAULT_HAS_STRUCTURE),
+                GenerationStep.Feature.UNDERGROUND_ORES, VividPlacedFeatures.PL_LAPIS);
+        BiomeModifications.addFeature(BiomeSelectors.tag(ParadiseLostStructureTags.VAULT_HAS_STRUCTURE),
                 GenerationStep.Feature.UNDERGROUND_ORES, VividPlacedFeatures.PL_SOULSTONE);
         BiomeModifications.addFeature(BiomeSelectors.tag(ParadiseLostStructureTags.VAULT_HAS_STRUCTURE),
                 GenerationStep.Feature.UNDERGROUND_ORES, VividPlacedFeatures.PL_BRILLIANT);
