@@ -168,8 +168,6 @@ public class VividSpirit implements ModInitializer {
 			new CardinalFacingBlock(FabricBlockSettings.copyOf(ParadiseLostBlocks.BLOOMED_CALCITE)
 			));
 
-	public static final Block TOPAZ_INLAID_BASALT_CREST = registerBlock("topaz_inlaid_basalt_crest",
-					.luminance(7)
 	public static final Block BLACKSLAG_ZINC_ORE = registerBlock("blackslag_zinc_ore",
 			new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)
 			));
